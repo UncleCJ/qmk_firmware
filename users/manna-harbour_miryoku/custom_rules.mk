@@ -9,3 +9,5 @@ FORCE_LAYOUT = split_3x6_3
 
 RGBLIGHT_ENABLE = yes
 OLED_ENABLE = yes
+
+EXTRAFLAGS += -flto
