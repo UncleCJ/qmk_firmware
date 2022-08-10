@@ -56,6 +56,12 @@
       #else
         #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_QWERTY
       #endif
+    #elif defined (MIRYOKU_ALPHAS_QWERTY_SV)
+    //  #if FORCE_LAYOUT==split_3x6_3
+        #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_QWERTY_SV_split_3x6_3
+    //  #else
+    //    #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_QWERTY_SV
+    //   #endif
     #elif defined (MIRYOKU_ALPHAS_QWERTZ)
       #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_QWERTZ
     #else
@@ -174,6 +180,12 @@
       #else
         #define MIRYOKU_LAYER_TAP MIRYOKU_ALTERNATIVES_TAP_QWERTY
       #endif
+    #elif defined (MIRYOKU_TAP_QWERTY_SV)
+    //   #if FORCE_LAYOUT==split_3x6_3
+        #define MIRYOKU_LAYER_TAP MIRYOKU_ALTERNATIVES_TAP_QWERTY_split_3x6_3
+    //   #else
+        // #define MIRYOKU_LAYER_TAP MIRYOKU_ALTERNATIVES_TAP_QWERTY
+    //   #endif
     #elif defined (MIRYOKU_TAP_QWERTZ)
       #define MIRYOKU_LAYER_TAP MIRYOKU_ALTERNATIVES_TAP_QWERTZ
     #else
