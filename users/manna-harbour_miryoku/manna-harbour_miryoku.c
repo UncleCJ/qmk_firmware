@@ -83,8 +83,8 @@ static void render_wpm(void) {
 }
 
 // KEYBOARD PET START
-#define MIN_WALK_SPEED 10
-#define MIN_RUN_SPEED 40
+#define MIN_WALK_SPEED 5
+#define MIN_RUN_SPEED 30
 
 #define ANIM_FRAME_DURATION 200
 #define ANIM_SIZE 96
@@ -306,7 +306,9 @@ static void render_luna(int LUNA_X, int LUNA_Y) {
 // KEYBOARD PET END
 
 static void print_status_narrow(void) {
-    oled_set_cursor(0, 0);
+    oled_set_cursor(0, 3);
+    oled_write("LAYER", false);
+    oled_set_cursor(0, 4);
     switch (get_highest_layer(default_layer_state)) {
         case U_BASE:
             oled_write("Base ", false);
@@ -335,10 +337,9 @@ static void print_status_narrow(void) {
         default:
             oled_write("UNDEF", false);
     }
-
-    oled_set_cursor(0, 3);
-    oled_write("LAYER", false);
-    oled_set_cursor(0, 4);
+    oled_set_cursor(0, 5);
+    oled_write(" -", false);
+    oled_set_cursor(0, 6);
     switch (get_highest_layer(layer_state)) {
         case U_BASE:
             oled_write("Base ", false);
