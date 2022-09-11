@@ -26,3 +26,6 @@
     #define RGBLIGHT_SAT_STEP 17
     #define RGBLIGHT_VAL_STEP 17
 #endif
+
+#define OLED_TIMEOUT 120000
+#define OLED_BRIGHTNESS 120
