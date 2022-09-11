@@ -69,7 +69,6 @@ tags
 # Ignore image/font files
 *.gif
 *.jpg
-*.png
 *.ttf
 *.otf
 

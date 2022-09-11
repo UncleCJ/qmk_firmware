@@ -45,7 +45,7 @@ combo_t key_combos[COMBO_COUNT] = {
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     if (!is_keyboard_master()) {
-        return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
+        return OLED_ROTATION_270;
     }
     return rotation;
 }
@@ -121,12 +121,12 @@ void oled_render_keylog(void) {
 }
 
 void oled_render_logo(void) {
-    static const char PROGMEM crkbd_logo[] = {
-        0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0x8f, 0x90, 0x91, 0x92, 0x93, 0x94,
-        0xa0, 0xa1, 0xa2, 0xa3, 0xa4, 0xa5, 0xa6, 0xa7, 0xa8, 0xa9, 0xaa, 0xab, 0xac, 0xad, 0xae, 0xaf, 0xb0, 0xb1, 0xb2, 0xb3, 0xb4,
-        0xc0, 0xc1, 0xc2, 0xc3, 0xc4, 0xc5, 0xc6, 0xc7, 0xc8, 0xc9, 0xca, 0xcb, 0xcc, 0xcd, 0xce, 0xcf, 0xd0, 0xd1, 0xd2, 0xd3, 0xd4,
-        0};
-    oled_write_P(crkbd_logo, false);
+    static const char PROGMEM hiq_logo[] = {
+        0,  0,  0, 12, 28, 28, 60, 60, 63,127,255,252,240,224,224,224,192,192,128,128,128,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 12, 14, 30, 30, 62, 60, 60,124,120,248,240,247,255,255,255,241,193,195,131,135,135,  7, 15, 14, 30,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 96,240,248,248,240,240,225,239,255,255,255,  7,  7, 15, 15, 15, 31, 30, 30, 62, 60,124,120,120,  0,  0,  0,  0,  0,  0,192,192,224,225,239,255,255,252,224,193,193,195,192,128,128,  6, 15, 15, 14, 30, 30, 60,  0,  0,  0,  0,  0,  0,
+        0,  0,  0, 15, 63,255,255,243,193,129,  7,127,255,255,227,  3,  3,  7,  7, 15, 15, 30, 30, 60,124,248,240,224,192,128,  0,  0,  0,  0,  0,  0,  0,  0,  1,  3,  7, 15, 31, 31, 63,255,255,252,248,240,240,224,224,224,224,192,192,192,225,227,255,255,255,124,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,255,255,255,  0,  1,  1,  1,  1,  3,  3,  3,  3,  3,  1,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,255,  0,112,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+    };
+    oled_set_cursor(0, 2);
+    oled_write_raw_P(hiq_logo, sizeof(hiq_logo));
 }
 
 bool oled_task_user(void) {
